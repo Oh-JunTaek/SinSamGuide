@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.eunma.sinsamguide"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.eunma.sinsamguide"
