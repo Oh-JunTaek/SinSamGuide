@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewEventDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="버튼에 대한 설명" />
+
+    <Button
+        android:id="@+id/buttonMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메인" />
+
+    <Button
+        android:id="@+id/buttonSeason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="시즌" />
+
+    <Button
+        android:id="@+id/buttonSpecial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="특별" />
+
+</LinearLayout>
