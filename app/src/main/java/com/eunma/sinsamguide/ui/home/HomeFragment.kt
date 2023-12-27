@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import com.eunma.sinsamguide.databinding.DialogContentsBinding
 import com.eunma.sinsamguide.databinding.DialogEventBinding
 import com.eunma.sinsamguide.databinding.DialogGuideBinding
 import com.eunma.sinsamguide.databinding.FragmentHomeBinding
@@ -28,7 +29,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val eventButton: Button = binding.buttonEvent
+        val eventButton: Button = binding.btnEvent
         eventButton.setOnClickListener {
             showEventDialog()
         }
@@ -36,6 +37,11 @@ class HomeFragment : Fragment() {
         val guideButton: Button = binding.btnGuide
         guideButton.setOnClickListener {
             showGuideDialog()
+        }
+
+        val contentsButton: Button = binding.BtnContents
+        contentsButton.setOnClickListener {
+            showContentsDialog()
         }
 
         val homeViewModel =
@@ -65,6 +71,32 @@ class HomeFragment : Fragment() {
         buttonUserTip.setOnClickListener {
 
         }
+        builder.setView(dialogBinding.root)
+        builder.setNegativeButton("취소") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.show()
+    }
+
+    private fun showContentsDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("컨텐츠 선택")
+
+        val dialogBinding: DialogContentsBinding = DialogContentsBinding.inflate(layoutInflater)
+        val buttonMainContents: Button = dialogBinding.btnMainContents
+        val buttonSeasonContents: Button = dialogBinding.btnSeasonContents
+        val buttonNewContents: Button = dialogBinding.btnNewContents
+        buttonMainContents.setOnClickListener {
+            // 메인 버튼 클릭시 할 일
+        }
+        buttonSeasonContents.setOnClickListener {
+            // 시즌 버튼 클릭시 할 일
+        }
+        buttonNewContents.setOnClickListener {
+
+        }
+
         builder.setView(dialogBinding.root)
         builder.setNegativeButton("취소") { dialog, _ ->
             dialog.dismiss()
