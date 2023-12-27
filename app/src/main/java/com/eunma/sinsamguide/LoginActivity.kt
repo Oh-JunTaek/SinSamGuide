@@ -8,6 +8,7 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import com.eunma.sinsamguide.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
@@ -15,12 +16,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-
-    private val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        .requestEmail()
-        .build()
-
-    private val googleSignInClient = GoogleSignIn.getClient(this, gso)
+    private lateinit var googleSignInClient: GoogleSignInClient
 
     companion object {
         private const val RC_SIGN_IN = 9001
@@ -30,6 +26,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // GoogleSignInClient 초기화
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         binding.googleSignInButton.setOnClickListener {
             val signInIntent = googleSignInClient.signInIntent
