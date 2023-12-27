@@ -11,14 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.eunma.sinsamguide.databinding.DialogEventBinding
+import com.eunma.sinsamguide.databinding.DialogGuideBinding
 import com.eunma.sinsamguide.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -34,6 +33,11 @@ class HomeFragment : Fragment() {
             showEventDialog()
         }
 
+        val guideButton: Button = binding.btnGuide
+        guideButton.setOnClickListener {
+            showGuideDialog()
+        }
+
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
@@ -44,14 +48,39 @@ class HomeFragment : Fragment() {
         return root
     }
 
+    private fun showGuideDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("가이드 선택")
+
+        val dialogBinding: DialogGuideBinding = DialogGuideBinding.inflate(layoutInflater)
+        val buttonGuide: Button = dialogBinding.btnBasicGuide
+        val buttonDeveloperTip: Button = dialogBinding.btnDeveloperTip
+        val buttonUserTip: Button = dialogBinding.btnUserTip
+        buttonGuide.setOnClickListener {
+
+        }
+        buttonDeveloperTip.setOnClickListener {
+
+        }
+        buttonUserTip.setOnClickListener {
+
+        }
+        builder.setView(dialogBinding.root)
+        builder.setNegativeButton("취소") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.show()
+    }
+
     private fun showEventDialog() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("이벤트 선택")
 
         val dialogBinding: DialogEventBinding = DialogEventBinding.inflate(layoutInflater)
-        val buttonMain: Button = dialogBinding.buttonMain
-        val buttonSeason: Button = dialogBinding.buttonSeason
-        val buttonSpecial: Button = dialogBinding.buttonSpecial
+        val buttonMain: Button = dialogBinding.btnMain
+        val buttonSeason: Button = dialogBinding.btnSeason
+        val buttonSpecial: Button = dialogBinding.btnSpecial
         buttonMain.setOnClickListener {
             // 메인 버튼 클릭시 할 일
         }

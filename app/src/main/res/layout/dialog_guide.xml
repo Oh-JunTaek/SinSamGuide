@@ -6,27 +6,27 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textViewEventDescription"
+        android:id="@+id/textViewGuideDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="버튼에 대한 설명" />
 
     <Button
-        android:id="@+id/btnMain"
+        android:id="@+id/btnBasicGuide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메인" />
+        android:text="기본가이드" />
 
     <Button
-        android:id="@+id/btnSeason"
+        android:id="@+id/btnDeveloperTip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="시즌" />
+        android:text="제작자Tip" />
 
     <Button
-        android:id="@+id/btnSpecial"
+        android:id="@+id/btnUserTip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="특별" />
+        android:text="유저Tip" />
 
 </LinearLayout>
