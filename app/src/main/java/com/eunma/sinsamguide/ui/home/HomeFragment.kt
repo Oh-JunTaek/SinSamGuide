@@ -78,10 +78,10 @@ class HomeFragment : Fragment() {
         builder.setTitle("이벤트 선택")
 
         val dialogBinding: DialogEventBinding = DialogEventBinding.inflate(layoutInflater)
-        val buttonMain: Button = dialogBinding.btnMain
-        val buttonSeason: Button = dialogBinding.btnSeason
-        val buttonSpecial: Button = dialogBinding.btnSpecial
-        val buttonSpend : Button = dialogBinding.btnSpend
+        val buttonMain: Button = dialogBinding.btnMainEvent
+        val buttonSeason: Button = dialogBinding.btnSeasonEvent
+        val buttonSpecial: Button = dialogBinding.btnSpecialEvent
+        val buttonSpend : Button = dialogBinding.btnSpendEvent
         buttonMain.setOnClickListener {
             // 메인 버튼 클릭시 할 일
         }

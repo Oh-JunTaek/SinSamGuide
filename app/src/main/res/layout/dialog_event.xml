@@ -12,25 +12,25 @@
         android:text="버튼에 대한 설명" />
 
     <Button
-        android:id="@+id/btnMain"
+        android:id="@+id/btnMainEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="메인 이벤트" />
 
     <Button
-        android:id="@+id/btnSeason"
+        android:id="@+id/btnSeasonEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="시즌 이벤트" />
 
     <Button
-        android:id="@+id/btnSpecial"
+        android:id="@+id/btnSpecialEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="특별 이벤트" />
 
     <Button
-        android:id="@+id/btnSpend"
+        android:id="@+id/btnSpendEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="소비 이벤트" />
