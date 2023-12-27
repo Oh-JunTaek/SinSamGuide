@@ -81,6 +81,7 @@ class HomeFragment : Fragment() {
         val buttonMain: Button = dialogBinding.btnMain
         val buttonSeason: Button = dialogBinding.btnSeason
         val buttonSpecial: Button = dialogBinding.btnSpecial
+        val buttonSpend : Button = dialogBinding.btnSpend
         buttonMain.setOnClickListener {
             // 메인 버튼 클릭시 할 일
         }
@@ -89,6 +90,9 @@ class HomeFragment : Fragment() {
         }
         buttonSpecial.setOnClickListener {
             // 특별 버튼 클릭시 할 일
+        }
+        buttonSpend.setOnClickListener {
+
         }
 
         builder.setView(dialogBinding.root)
