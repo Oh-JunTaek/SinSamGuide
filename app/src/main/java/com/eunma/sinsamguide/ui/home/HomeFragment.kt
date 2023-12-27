@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
 
     private fun showGuideDialog() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("가이드 선택")
+        builder.setTitle("기본 가이드 및 Tip")
 
         val dialogBinding: DialogGuideBinding = DialogGuideBinding.inflate(layoutInflater)
         val buttonGuide: Button = dialogBinding.btnBasicGuide
@@ -81,7 +81,7 @@ class HomeFragment : Fragment() {
 
     private fun showContentsDialog() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("컨텐츠 선택")
+        builder.setTitle("컨텐츠에 대한 설명")
 
         val dialogBinding: DialogContentsBinding = DialogContentsBinding.inflate(layoutInflater)
         val buttonMainContents: Button = dialogBinding.btnMainContents
@@ -107,7 +107,7 @@ class HomeFragment : Fragment() {
 
     private fun showEventDialog() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("이벤트 선택")
+        builder.setTitle("이벤트탭 대한 공략")
 
         val dialogBinding: DialogEventBinding = DialogEventBinding.inflate(layoutInflater)
         val buttonMain: Button = dialogBinding.btnMainEvent

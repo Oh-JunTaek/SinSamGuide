@@ -10,4 +10,20 @@
     <string name="menu_home">신삼가이드</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+
+    <string name="button_guide_description">
+        \n <b>기본가이드</b>는 게임에 대한 전반적인 지식과 정보를 얻으실 수 있습니다.
+        \n <b>제작자Tip</b>은 제작자가 제공하는 정보를 얻으실 수 있습니다. 단 절대적이지 않고 상황/업데이트여부에 따라 달라질 수 있습니다.
+        \n <b>유저Tip</b>은 유저들끼리 정보를 나누고 읽으실 수 있습니다.</string>
+    <string name="button_event_description">
+        \n <b>메인 이벤트</b>는 이벤트텝에 있는 기본 이벤트에 대한 정보가 있습니다.
+        \n <b>시즌 이벤트</b>는 시즌과 관련된 이벤트에 대한 정보가 있습니다.
+        \n <b>특별 이벤트</b>는 명절,n주년 등 특수 이벤트에 대한 정보가 있습니다.
+        \n <b>소비 이벤트</b>는 원보를 사용해 참여할 수 있는 이벤트에 대한 정보가 있습니다.</string>
+    <string name="button_contents_description">
+        \n <b>메인 컨텐츠</b>는 신삼국지의 주요 컨텐츠입니다.
+        \n <b>시즌 컨텐츠</b>는 시즌이 변하면서 추가된 컨텐츠 입니다.
+        \n <b>신규 컨텐츠</b>는 이번 시즌 새롭게 추가된 컨텐츠입니다.</string>
+
 </resources>

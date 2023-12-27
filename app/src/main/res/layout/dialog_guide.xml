@@ -9,7 +9,7 @@
         android:id="@+id/textViewGuideDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="버튼에 대한 설명" />
+        android:text="@string/button_guide_description" />
 
     <Button
         android:id="@+id/btnBasicGuide"
