@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -39,9 +40,19 @@ class HomeFragment : Fragment() {
             showGuideDialog()
         }
 
-        val contentsButton: Button = binding.BtnContents
+        val contentsButton: Button = binding.btnContents
         contentsButton.setOnClickListener {
             showContentsDialog()
+        }
+
+        val pictorialButton = binding.btnPictorialBook
+        pictorialButton.setOnClickListener {
+            Toast.makeText(context, "미구현입니다.", Toast.LENGTH_SHORT).show()
+        }
+
+        val freeboardButton = binding.btnFreeBoad
+        freeboardButton.setOnClickListener {
+            Toast.makeText(context, "미구현입니다.", Toast.LENGTH_SHORT).show()
         }
 
         val homeViewModel =

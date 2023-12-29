@@ -12,8 +12,8 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.eunma.sinsamguide.databinding.ActivityMainBinding
-import android.app.AlertDialog
 import android.content.Intent
+import com.eunma.sinsamguide.data.notice.NoticeActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,9 +54,15 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.notice -> {
+                val intent = Intent(this, NoticeActivity::class.java)
+                startActivity(intent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 
 
     override fun onSupportNavigateUp(): Boolean {

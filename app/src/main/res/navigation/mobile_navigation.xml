@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.eunma.sinsamguide.ui.gallery.GalleryFragment"
+        android:name="com.eunma.sinsamguide.ui.notice.NoticeFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_notice" />
 
     <fragment
         android:id="@+id/nav_slideshow"

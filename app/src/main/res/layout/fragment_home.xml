@@ -70,19 +70,21 @@
                 android:text="이벤트" />
 
             <Button
-                android:id="@+id/BtnContents"
+                android:id="@+id/btnContents"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="컨텐츠" />
 
             <Button
+                android:id="@+id/btnPictorialBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="도감" />
 
             <Button
+                android:id="@+id/btnFreeBoad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
