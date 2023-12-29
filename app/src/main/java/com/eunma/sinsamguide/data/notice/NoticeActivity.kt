@@ -1,6 +1,7 @@
 package com.eunma.sinsamguide.data.notice
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,14 +41,14 @@ class NoticeActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<Notice>>, t: Throwable) {
                 Toast.makeText(this@NoticeActivity, "데이터를 불러오는데 실패했습니다.", Toast.LENGTH_SHORT).show()
+                Log.e("NoticeActivity", "Error fetching notices", t)
                 this@NoticeActivity.finish()
             }
         })
     }
 
     private fun setupRecyclerView(notices: List<Notice>) {
-        binding.noticeRecyclerView.layoutManager = LinearLayoutManager(this)
-        binding.noticeRecyclerView.adapter = NoticeAdapter(notices)
+        adapter.updateData(notices)
     }
     private fun updateAdapterData(notices: List<Notice>) {
         adapter.updateData(notices) // 구현 필요
