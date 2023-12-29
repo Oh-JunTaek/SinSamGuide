@@ -12,11 +12,16 @@ import retrofit2.Response
 class NoticeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNoticeBinding
+    private val adapter = NoticeAdapter(emptyList())
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNoticeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.noticeRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.noticeRecyclerView.adapter = adapter
 
         RetrofitService.noticeApi.getNotices().enqueue(object : Callback<List<Notice>> {
             override fun onResponse(call: Call<List<Notice>>, response: Response<List<Notice>>) {
@@ -35,6 +40,7 @@ class NoticeActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<Notice>>, t: Throwable) {
                 Toast.makeText(this@NoticeActivity, "데이터를 불러오는데 실패했습니다.", Toast.LENGTH_SHORT).show()
+                this@NoticeActivity.finish()
             }
         })
     }
@@ -42,5 +48,8 @@ class NoticeActivity : AppCompatActivity() {
     private fun setupRecyclerView(notices: List<Notice>) {
         binding.noticeRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.noticeRecyclerView.adapter = NoticeAdapter(notices)
+    }
+    private fun updateAdapterData(notices: List<Notice>) {
+        adapter.updateData(notices) // 구현 필요
     }
 }
