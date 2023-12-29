@@ -1,10 +1,13 @@
 package com.eunma.sinsamguide.data.notice
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.eunma.sinsamguide.databinding.ActivityNoticeBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -18,6 +21,7 @@ class NoticeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNoticeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.noticeRecyclerView.addItemDecoration(VerticalSpaceItemDecoration(30))
         loadNoticesFromFirestore()
 
         binding.noticeRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -43,5 +47,11 @@ class NoticeActivity : AppCompatActivity() {
                 Toast.makeText(this, "데이터를 불러오는데 실패했습니다.", Toast.LENGTH_SHORT).show()
                 Log.e("NoticeActivity", "Error getting documents: ", exception)
             }
+    }
+    class VerticalSpaceItemDecoration(private val verticalSpaceHeight: Int) : RecyclerView.ItemDecoration() {
+
+        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+            outRect.bottom = verticalSpaceHeight
+        }
     }
 }
