@@ -1,6 +1,8 @@
 package com.eunma.sinsamguide.data.notice
 
+import android.transition.TransitionManager
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.eunma.sinsamguide.databinding.NoticeItemBinding
@@ -26,11 +28,22 @@ class NoticeAdapter(private var noticeList: List<Notice>) : RecyclerView.Adapter
         notifyDataSetChanged()
     }
 
-    class NoticeViewHolder(private val binding: NoticeItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class NoticeViewHolder(private val binding: NoticeItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(notice: Notice) {
+            binding.noticeType.text = notice.type
             binding.noticeTitle.text = notice.title
             binding.noticeDate.text = notice.date
             binding.noticeContent.text = notice.content
+
+            itemView.setOnClickListener {
+                TransitionManager.beginDelayedTransition(binding.root as ViewGroup)
+                if (binding.noticeContent.visibility == View.GONE) {
+                    binding.noticeContent.visibility = View.VISIBLE
+                } else {
+                    binding.noticeContent.visibility = View.GONE
+                }
+            }
         }
     }
 }
