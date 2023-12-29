@@ -1,6 +1,7 @@
 package com.eunma.sinsamguide.data.notice
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eunma.sinsamguide.databinding.ActivityNoticeBinding
@@ -23,13 +24,17 @@ class NoticeActivity : AppCompatActivity() {
                     val notices = response.body()
                     // 여기서 notices를 RecyclerView에 표시합니다.
                     if (notices != null) {
-                        setupRecyclerView(notices)
+                        if (notices.isNotEmpty()) {
+                            setupRecyclerView(notices)
+                        } else {
+                            Toast.makeText(this@NoticeActivity, "공지사항이 없습니다.", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
             }
 
             override fun onFailure(call: Call<List<Notice>>, t: Throwable) {
-                // 네트워크 요청이 실패한 경우에 대한 처리를 여기서 합니다.
+                Toast.makeText(this@NoticeActivity, "데이터를 불러오는데 실패했습니다.", Toast.LENGTH_SHORT).show()
             }
         })
     }
