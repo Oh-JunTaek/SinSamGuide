@@ -17,7 +17,6 @@ class NoticeActivity : AppCompatActivity() {
     private val adapter = NoticeAdapter(emptyList())
     private val db = FirebaseFirestore.getInstance()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNoticeBinding.inflate(layoutInflater)
@@ -26,28 +25,6 @@ class NoticeActivity : AppCompatActivity() {
 
         binding.noticeRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.noticeRecyclerView.adapter = adapter
-
-        RetrofitService.noticeApi.getNotices().enqueue(object : Callback<List<Notice>> {
-            override fun onResponse(call: Call<List<Notice>>, response: Response<List<Notice>>) {
-                if (response.isSuccessful) {
-                    val notices = response.body()
-                    // 여기서 notices를 RecyclerView에 표시합니다.
-                    if (notices != null) {
-                        if (notices.isNotEmpty()) {
-                            setupRecyclerView(notices)
-                        } else {
-                            Toast.makeText(this@NoticeActivity, "공지사항이 없습니다.", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<List<Notice>>, t: Throwable) {
-                Toast.makeText(this@NoticeActivity, "데이터를 불러오는데 실패했습니다.", Toast.LENGTH_SHORT).show()
-                Log.e("NoticeActivity", "Error fetching notices", t)
-                this@NoticeActivity.finish()
-            }
-        })
     }
 
     private fun setupRecyclerView(notices: List<Notice>) {
