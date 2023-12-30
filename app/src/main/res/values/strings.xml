@@ -9,7 +9,7 @@
     <string name="notice">공지사항</string>
 
     <string name="menu_home">신삼가이드</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_alarm">알림설정</string>
     <string name="menu_slideshow">Slideshow</string>
 
 
@@ -26,5 +26,18 @@
         \n <b>메인 컨텐츠</b>는 신삼국지의 주요 컨텐츠입니다.
         \n <b>시즌 컨텐츠</b>는 시즌이 변하면서 추가된 컨텐츠 입니다.
         \n <b>신규 컨텐츠</b>는 이번 시즌 새롭게 추가된 컨텐츠입니다.</string>
+
+    <string name="alarm1_title">새 버전 소식 받기</string>
+    <string name="alarm1_description">신규 버전 출시가 되면 알림을 받습니다.</string>
+
+    <string name="alarm2_title">요일별 일정</string>
+    <string name="alarm2_description">요일별로 컨텐츠 알림을 1시간 전에 받습니다.</string>
+
+    <string name="alarm3_title">깜빡이 금지</string>
+    <string name="alarm3_description">오후 10시에 잊은건 없는지 확인 알림을 받습니다.</string>
+
+    <string name="alarm4_title">시즌 안내</string>
+    <string name="alarm4_description">시즌결산 및 종료, 신규시즌 오픈 시 알림을 받습니다.</string>
+    ...
 
 </resources>

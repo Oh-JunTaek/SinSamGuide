@@ -6,38 +6,143 @@
     android:layout_height="match_parent"
     tools:context=".ui.alarm.AlarmFragment">
 
+    <!-- Alarm 1 -->
     <TextView
-        android:id="@+id/alarmTitle"
+        android:id="@+id/alarm1_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:textSize="20sp"
-        android:text="알람 설정"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="@string/alarm1_title"
         android:textAlignment="viewStart"
-        app:layout_constraintEnd_toStartOf="@+id/alarmSwitch"
+        app:layout_constraintEnd_toStartOf="@+id/alarm1_switch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/alarmDescription"
+        android:id="@+id/alarm1_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="14sp"
-        android:text="알람을 설정하려면 스위치를 켜주세요."
+        android:text="@string/alarm1_description"
         android:textAlignment="viewStart"
-        app:layout_constraintEnd_toStartOf="@+id/alarmSwitch"
+        app:layout_constraintEnd_toStartOf="@+id/alarm1_switch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alarmTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/alarm1_title"/>
 
-    <Switch
-        android:id="@+id/alarmSwitch"
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/alarm1_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/alarmDescription"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="@+id/alarm1_title"/>
+
+    <!-- Alarm 2 -->
+    <TextView
+        android:id="@+id/alarm2_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="@string/alarm2_title"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toStartOf="@+id/alarm2_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm1_description"/>
+
+    <TextView
+        android:id="@+id/alarm2_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:text="@string/alarm2_description"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toStartOf="@+id/alarm2_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm2_title"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/alarm2_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/alarm2_title"/>
+
+    <!-- Alarm 3 -->
+    <TextView
+        android:id="@+id/alarm3_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="@string/alarm3_title"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toStartOf="@+id/alarm3_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm2_description"/>
+
+    <TextView
+        android:id="@+id/alarm3_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:text="@string/alarm3_description"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toStartOf="@+id/alarm3_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm3_title"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/alarm3_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/alarm3_title"/>
+
+    <!-- Alarm 4 -->
+    <TextView
+        android:id="@+id/alarm4_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="@string/alarm4_title"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toStartOf="@+id/alarm4_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm3_description"/>
+
+    <TextView
+        android:id="@+id/alarm4_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:text="@string/alarm4_description"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toStartOf="@+id/alarm4_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm4_title"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/alarm4_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/alarm4_title"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
