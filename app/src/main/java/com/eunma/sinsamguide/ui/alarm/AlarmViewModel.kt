@@ -2,7 +2,6 @@ package com.eunma.sinsamguide.ui.alarm
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import java.util.*
@@ -70,31 +69,35 @@ class AlarmViewModel : ViewModel() {
     fun setWeeklyAlarms(context: Context, isEnabled: Boolean) {
         if (isEnabled) {
             val alarmSchedule = mapOf(
-                Calendar.MONDAY to Pair(19, 30),  // 월요일 19시 30분
-                Calendar.TUESDAY to Pair(22, 0),   // 화요일 22시
+                Calendar.MONDAY to Pair(19, 30) to "묘우탈보",
+                Calendar.TUESDAY to Pair(22, 0) to "안문전투",
                 // 수요일은 없음
-                Calendar.THURSDAY to Pair(20, 0), // 목요일 20시
-                // 한중/적벽/백마 22시
-                Calendar.FRIDAY to Pair(22, 0),   // 금요일 22시
-                Calendar.SATURDAY to Pair(12, 0)  // 토요일 12시
-                // 군단전 22시
+                Calendar.THURSDAY to Pair(20, 0) to "유적정봉",
+                Calendar.THURSDAY to Pair(22, 30) to "한중/적벽/백마",
+                Calendar.FRIDAY to Pair(22, 0) to "장안쟁탈전",
+                Calendar.SATURDAY to Pair(12, 0) to "남만침입",
+                Calendar.SATURDAY to Pair(22, 0) to "군단전"
             )
 
-            alarmSchedule.forEach { (dayOfWeek, time) ->
-                setLocalAlarmForDay(context, dayOfWeek, time.first, time.second)
+            alarmSchedule.forEach { (time, event) ->
+                setLocalAlarmForEvent(context, time.first, time.second, event)
             }
         } else {
             cancelAllAlarms(context) // 모든 알람 취소
         }
     }
-    private fun setLocalAlarmForDay(context: Context, dayOfWeek: Int, hour: Int, minute: Int) {
+
+    private fun setLocalAlarmForEvent(context: Context, dayOfWeek: Int, hourMinute: Pair<Int, Int>, event: String) {
+        val (hour, minute) = hourMinute
         val calendar = Calendar.getInstance().apply {
             set(Calendar.DAY_OF_WEEK, dayOfWeek)
             set(Calendar.HOUR_OF_DAY, hour - 1) // 1시간 전
             set(Calendar.MINUTE, minute)
             set(Calendar.SECOND, 0)
         }
-        // 여기에 로컬 알람 설정 로직 추가
+
+        val message = "$event 이(가) 1시간 뒤에 시작됩니다. 늦지 않게 준비하세요."
+        setLocalAlarm(context, calendar.timeInMillis, message)
     }
 
     private fun cancelAllAlarms(context: Context) {

@@ -51,7 +51,7 @@ class AlarmFragment : Fragment() {
         binding.alarm2Switch.setOnCheckedChangeListener { _, isChecked ->
             alarmViewModel.saveSwitchState(requireContext(), binding.alarm2Switch.id, isChecked)
             showFeedback(isChecked)
-            // 여기에 필요한 추가 로직 (예: 알람 설정)
+            alarmViewModel.setWeeklyAlarms(requireContext(), isChecked)
         }
 
         binding.alarm3Switch.setOnCheckedChangeListener { _, isChecked ->
