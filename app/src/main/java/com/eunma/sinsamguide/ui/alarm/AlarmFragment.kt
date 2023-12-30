@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.eunma.sinsamguide.databinding.FragmentAlarmBinding
@@ -28,42 +29,47 @@ class AlarmFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 스위치 상태 복원
-        val switches = arrayOf(binding.alarm1Switch, binding.alarm2Switch, binding.alarm3Switch, binding.alarm4Switch)
-        switches.forEach { switch ->
-            switch.isChecked = alarmViewModel.getSwitchState(switch.id)
+        // 사용자 ID (예: 구글 로그인 사용자 ID)
+        val userId = "some_user_id"
+
+        binding.alarm2Switch.isChecked = alarmViewModel.getSwitchState(requireContext(), binding.alarm2Switch.id)
+        binding.alarm3Switch.isChecked = alarmViewModel.getSwitchState(requireContext(), binding.alarm3Switch.id)
+
+        // 스위치 1과 4의 상태를 Firebase에서 가져옴
+        alarmViewModel.getSwitchStateFromFirebase(binding.alarm1Switch.id, userId) { state ->
+            binding.alarm1Switch.isChecked = state
+        }
+        alarmViewModel.getSwitchStateFromFirebase(binding.alarm4Switch.id, userId) { state ->
+            binding.alarm4Switch.isChecked = state
         }
 
         binding.alarm1Switch.setOnCheckedChangeListener { _, isChecked ->
-            // 클라우드 메시지 알림 설정
-            alarmViewModel.handleCloudMessageAlarm(isChecked)
-            alarmViewModel.saveSwitchState(binding.alarm1Switch.id, isChecked)
+            alarmViewModel.handleCloudMessageAlarm(isChecked, userId)
+            alarmViewModel.saveSwitchStateToFirebase(binding.alarm1Switch.id, isChecked, userId)
         }
 
         binding.alarm2Switch.setOnCheckedChangeListener { _, isChecked ->
-            // 로컬 알림 설정 UI 표시
-            alarmViewModel.handleLocalAlarmSettings(isChecked)
-            alarmViewModel.saveSwitchState(binding.alarm2Switch.id, isChecked)
+            alarmViewModel.saveSwitchState(requireContext(), binding.alarm2Switch.id, isChecked)
+            showFeedback(isChecked)
+            // 여기에 필요한 추가 로직 (예: 알람 설정)
         }
 
         binding.alarm3Switch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                val calendar = Calendar.getInstance().apply {
-                    set(Calendar.HOUR_OF_DAY, 22)
-                    set(Calendar.MINUTE, 0)
-                    set(Calendar.SECOND, 0)
-                }
-                alarmViewModel.setLocalAlarm(requireContext(), calendar.timeInMillis, "잠들기 전에 모든 숙제를 했는지 확인해요~")
-            } else {
-                alarmViewModel.cancelLocalAlarm(requireContext())
-            }
-            alarmViewModel.saveSwitchState(binding.alarm3Switch.id, isChecked)
+            alarmViewModel.saveSwitchState(requireContext(), binding.alarm3Switch.id, isChecked)
+            showFeedback(isChecked)
+            // 여기에 필요한 추가 로직 (예: 알람 설정)
         }
 
         binding.alarm4Switch.setOnCheckedChangeListener { _, isChecked ->
-            // 클라우드 메시지 알림 설정
-            alarmViewModel.handleCloudMessageAlarm(isChecked)
-            alarmViewModel.saveSwitchState(binding.alarm4Switch.id, isChecked)
+            alarmViewModel.handleCloudMessageAlarm(isChecked, userId)
+            alarmViewModel.saveSwitchStateToFirebase(binding.alarm4Switch.id, isChecked, userId)
+        }
+    }
+    private fun showFeedback(isChecked: Boolean) {
+        if (isChecked) {
+            Toast.makeText(context, "알람이 켜졌습니다", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "알람이 꺼졌습니다", Toast.LENGTH_SHORT).show()
         }
     }
 
