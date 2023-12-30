@@ -7,6 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_login">Login</string>
     <string name="notice">공지사항</string>
+    <string name="app_info">앱 정보</string>
 
     <string name="menu_home">신삼 가이드</string>
     <string name="menu_alarm">알림설정</string>

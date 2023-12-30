@@ -14,8 +14,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.eunma.sinsamguide.databinding.ActivityMainBinding
 import android.content.Intent
+import android.os.Build
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.eunma.sinsamguide.data.notice.NoticeActivity
 import com.google.firebase.messaging.FirebaseMessaging
 
@@ -77,11 +79,36 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.app_info -> {
+                showAppInfoDialog()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
+    private fun showAppInfoDialog() {
+        val packageInfo = this.packageManager.getPackageInfo(this.packageName, 0)
+        val versionName = packageInfo.versionName
+        val versionCode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            packageInfo.longVersionCode
+        } else {
+            @Suppress("DEPRECATION")
+            packageInfo.versionCode
+        }
+        val appInfoMessage = """
+        앱 이름: 신삼 가이드
+        버전: $versionName ($versionCode)
+        개발자: EunmaStudio
+        문의하기: wns5388@naver.com
+    """.trimIndent()
 
+        AlertDialog.Builder(this)
+            .setTitle("앱 정보")
+            .setMessage(appInfoMessage)
+            .setPositiveButton("확인") { dialog, _ -> dialog.dismiss() }
+            .show()
+    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)

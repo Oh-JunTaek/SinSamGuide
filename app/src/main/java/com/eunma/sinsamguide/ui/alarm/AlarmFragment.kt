@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.eunma.sinsamguide.databinding.FragmentAlarmBinding
-import java.util.*
 
 class AlarmFragment : Fragment() {
 
@@ -36,8 +35,10 @@ class AlarmFragment : Fragment() {
         binding.alarm3Switch.isChecked = alarmViewModel.getSwitchState(requireContext(), binding.alarm3Switch.id)
 
         // 스위치 1과 4의 상태를 Firebase에서 가져옴
-        alarmViewModel.getSwitchStateFromFirebase(binding.alarm1Switch.id, userId) { state ->
-            binding.alarm1Switch.isChecked = state
+        binding.alarm1Switch.setOnCheckedChangeListener { _, isChecked ->
+            alarmViewModel.handleCloudMessageAlarm(isChecked, userId)
+            alarmViewModel.saveSwitchStateToFirebase(binding.alarm1Switch.id, isChecked, userId)
+            showFeedback(isChecked)
         }
         alarmViewModel.getSwitchStateFromFirebase(binding.alarm4Switch.id, userId) { state ->
             binding.alarm4Switch.isChecked = state
@@ -63,6 +64,7 @@ class AlarmFragment : Fragment() {
         binding.alarm4Switch.setOnCheckedChangeListener { _, isChecked ->
             alarmViewModel.handleCloudMessageAlarm(isChecked, userId)
             alarmViewModel.saveSwitchStateToFirebase(binding.alarm4Switch.id, isChecked, userId)
+            showFeedback(isChecked)
         }
     }
     private fun showFeedback(isChecked: Boolean) {
