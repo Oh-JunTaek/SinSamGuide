@@ -14,7 +14,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.eunma.sinsamguide.databinding.ActivityMainBinding
 import android.content.Intent
-import android.os.Build
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -90,12 +89,8 @@ class MainActivity : AppCompatActivity() {
     private fun showAppInfoDialog() {
         val packageInfo = this.packageManager.getPackageInfo(this.packageName, 0)
         val versionName = packageInfo.versionName
-        val versionCode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            packageInfo.longVersionCode
-        } else {
-            @Suppress("DEPRECATION")
-            packageInfo.versionCode
-        }
+        val versionCode = packageInfo.longVersionCode
+
         val appInfoMessage = """
         앱 이름: 신삼 가이드
         버전: $versionName ($versionCode)
