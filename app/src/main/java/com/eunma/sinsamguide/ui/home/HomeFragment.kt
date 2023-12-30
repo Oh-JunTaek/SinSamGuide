@@ -1,5 +1,6 @@
 package com.eunma.sinsamguide.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,10 +16,12 @@ import com.eunma.sinsamguide.databinding.DialogContentsBinding
 import com.eunma.sinsamguide.databinding.DialogEventBinding
 import com.eunma.sinsamguide.databinding.DialogGuideBinding
 import com.eunma.sinsamguide.databinding.FragmentHomeBinding
+import com.eunma.sinsamguide.ui.contents.MainContentsActivity
 
 class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
+
 
     private val binding get() = _binding!!
 
@@ -99,8 +102,10 @@ class HomeFragment : Fragment() {
         val buttonSeasonContents: Button = dialogBinding.btnSeasonContents
         val buttonNewContents: Button = dialogBinding.btnNewContents
         buttonMainContents.setOnClickListener {
-            // 메인 버튼 클릭시 할 일
+            val intent = Intent(requireContext(), MainContentsActivity::class.java)
+            startActivity(intent)
         }
+
         buttonSeasonContents.setOnClickListener {
             // 시즌 버튼 클릭시 할 일
         }
