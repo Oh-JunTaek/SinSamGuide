@@ -1,6 +1,5 @@
 package com.eunma.sinsamguide.ui.contents
 
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
