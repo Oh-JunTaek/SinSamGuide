@@ -17,6 +17,8 @@ import com.eunma.sinsamguide.databinding.DialogEventBinding
 import com.eunma.sinsamguide.databinding.DialogGuideBinding
 import com.eunma.sinsamguide.databinding.FragmentHomeBinding
 import com.eunma.sinsamguide.ui.contents.MainContentsActivity
+import com.eunma.sinsamguide.ui.contents.NewContentsActivity
+import com.eunma.sinsamguide.ui.contents.SeasonContentsActivity
 
 class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
@@ -107,10 +109,12 @@ class HomeFragment : Fragment() {
         }
 
         buttonSeasonContents.setOnClickListener {
-            // 시즌 버튼 클릭시 할 일
+            val intent = Intent(requireContext(), SeasonContentsActivity::class.java)
+            startActivity(intent)
         }
         buttonNewContents.setOnClickListener {
-
+            val intent = Intent(requireContext(), NewContentsActivity::class.java)
+            startActivity(intent)
         }
 
         builder.setView(dialogBinding.root)
