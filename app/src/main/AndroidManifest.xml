@@ -16,6 +16,9 @@
         android:theme="@style/Theme.SinSamGuide"
         tools:targetApi="31">
         <activity
+            android:name=".ui.contents.SeasonContentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.contents.MainContentsActivity"
             android:exported="false" />
         <activity
