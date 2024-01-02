@@ -64,35 +64,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="기본 가이드" />
+                android:text="기본 가이드"
+                android:backgroundTint="#8BC34A"/>
 
             <Button
                 android:id="@+id/btnEvent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="이벤트" />
+                android:text="이벤트"
+                android:backgroundTint="#8BC34A"/>
 
             <Button
                 android:id="@+id/btnContents"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="컨텐츠" />
+                android:text="컨텐츠"
+                android:backgroundTint="#8BC34A"/>
 
             <Button
                 android:id="@+id/btnPictorialBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="도감" />
+                android:text="도감"
+                android:backgroundTint="#8BC34A"/>
 
             <Button
                 android:id="@+id/btnFreeBoad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="자유게시판" />
+                android:text="자유게시판"
+                android:backgroundTint="#8BC34A"/>
 
 
         </LinearLayout>
