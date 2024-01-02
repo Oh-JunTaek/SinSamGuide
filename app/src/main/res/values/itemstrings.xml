@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_red_cliffs">적벽 대전에 대한 상세 설명...</string>
+    <string name="detail_baekma">백마</string>
+    <string name="detail_hanjung">한중</string>
+
+    <string name="detail_anmoon"></string>
+    <string name="detail_namman"></string>
+    <string name="detail_jangan"></string>
+    <string name="detail_gundan"></string>
+
+    <string name="detail_mewu"></string>
+    <string name="detail_ujaek"></string>
+
+
+
+
+
+</resources>

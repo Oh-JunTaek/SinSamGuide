@@ -19,10 +19,10 @@ class MainContentsActivity : AppCompatActivity() {
         binding.myRecyclerView.addItemDecoration(GridSpacingItemDecoration(2, 16))
 
         val dataList: List<ContentsData> = listOf(
-            ContentsData(R.drawable.anmoon, "안문 전투 - 군웅토동"),
-            ContentsData(R.drawable.namman, "남만 침입"),
-            ContentsData(R.drawable.janngan, "장안 쟁탈전"),
-            ContentsData(R.drawable.gundan, "군단 전투")
+            ContentsData(R.drawable.anmoon, "안문 전투 - 군웅토동",""),
+            ContentsData(R.drawable.namman, "남만 침입",""),
+            ContentsData(R.drawable.janngan, "장안 쟁탈전",""),
+            ContentsData(R.drawable.gundan, "군단 전투","")
         )
 
         binding.myRecyclerView.adapter = MyRecyclerViewAdapter(dataList)
