@@ -22,9 +22,11 @@ class CashEventsActivity : AppCompatActivity() {
         binding.casheventsRecyclerView.addItemDecoration(GridSpacingItemDecoration(2, 16))
 
         val dataList: List<ContentsData> = listOf(
-            ContentsData(R.drawable.baekma, "백마연진 지전", "백마연진 지전에 대한 설명"),
-            ContentsData(R.drawable.red_cliffs, "적벽 대전", "적벽 대전에 대한 설명"),
-            ContentsData(R.drawable.hanjung, "한중 전쟁", "한중 전쟁에 대한 설명")
+            ContentsData(R.drawable.baekma, "군단 박매소", "백마연진 지전에 대한 설명"),
+            ContentsData(R.drawable.red_cliffs, "한정 교환", "적벽 대전에 대한 설명"),
+            ContentsData(R.drawable.hanjung, "보물 탐색", "한중 전쟁에 대한 설명"),
+            ContentsData(R.drawable.hanjung, "보물 찾기", "한중 전쟁에 대한 설명"),
+            ContentsData(R.drawable.hanjung, "정통 인화", "한중 전쟁에 대한 설명")
         )
 
         binding.casheventsRecyclerView.adapter = MyRecyclerViewAdapter(dataList)
