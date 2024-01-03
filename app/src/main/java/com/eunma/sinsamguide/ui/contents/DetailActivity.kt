@@ -14,10 +14,14 @@ class DetailActivity : AppCompatActivity() {
         // 인텐트를 통해 아이템 데이터를 받습니다.
         val item = intent.getParcelableExtra<ContentsData>("item")
 
+        val imageList = intent.getIntegerArrayListExtra("imageList")
+        if (imageList != null) {
+            binding.viewPager.adapter = ViewPagerAdapterActivity(imageList)
+        }
+
         // 전달받은 아이템의 데이터를 화면에 표시합니다.
         item?.let {
             binding.contentTitle.text = it.text
-            binding.contentImage.setImageResource(it.imageResId)
             binding.contentDetail.text = it.detail
         }
 

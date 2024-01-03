@@ -23,8 +23,8 @@ class SeasonEventsActivity : AppCompatActivity() {
         binding.seasoneventsRecyclerView.addItemDecoration(GridSpacingItemDecoration(2, 16))
 
         val dataList: List<ContentsData> = listOf(
-            ContentsData(R.drawable.red_cliffs, "왕후 병기",""),
-            ContentsData(R.drawable.hanjung, "호붕 환우","")
+            ContentsData(R.drawable.red_cliffs, "왕후 병기","", listOf()),
+            ContentsData(R.drawable.hanjung, "호붕 환우","", listOf())
         )
 
         binding.seasoneventsRecyclerView.adapter = MyRecyclerViewAdapter(dataList)

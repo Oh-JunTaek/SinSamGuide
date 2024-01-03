@@ -21,10 +21,12 @@ class SeasonContentsActivity : AppCompatActivity() {
         binding.seasonRecyclerView.addItemDecoration(GridSpacingItemDecoration(2, 16))
 
         val dataList: List<ContentsData> = listOf(
-            ContentsData(R.drawable.baekma, "백마연진 지전", getString(R.string.detail_baekma)),
-            ContentsData(R.drawable.red_cliffs, "적벽 대전", getString(R.string.detail_red_cliffs)),
-            ContentsData(R.drawable.hanjung, "한중 전쟁", getString(R.string.detail_hanjung))
+            ContentsData(R.drawable.baekma, "백마연진 지전", getString(R.string.detail_baekma), listOf()),
+            ContentsData(R.drawable.red_cliffs, "적벽 대전", getString(R.string.detail_red_cliffs), listOf()),
+            ContentsData(R.drawable.hanjung, "한중 전쟁", getString(R.string.detail_hanjung), listOf())
         )
+
+
 
         binding.seasonRecyclerView.adapter = MyRecyclerViewAdapter(dataList)
     }

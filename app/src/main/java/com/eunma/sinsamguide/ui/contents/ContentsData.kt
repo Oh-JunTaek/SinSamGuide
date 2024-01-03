@@ -7,5 +7,6 @@ import kotlinx.parcelize.Parcelize
 data class ContentsData(
     val imageResId: Int,
     val text: String,
-    val detail: String
+    val detail: String,
+    val imageResIdList: List<Int>
 ) : Parcelable

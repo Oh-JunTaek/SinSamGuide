@@ -23,9 +23,9 @@ class MainEventsActivity : AppCompatActivity() {
         binding.maineventsRecyclerView.addItemDecoration(GridSpacingItemDecoration(2, 16))
 
         val dataList: List<ContentsData> = listOf(
-            ContentsData(R.drawable.baekma, "계절",""),
-            ContentsData(R.drawable.red_cliffs, "비적 소탕",""),
-            ContentsData(R.drawable.hanjung, "결사 항전","")
+            ContentsData(R.drawable.baekma, "계절","", listOf()),
+            ContentsData(R.drawable.red_cliffs, "비적 소탕","", listOf()),
+            ContentsData(R.drawable.hanjung, "결사 항전","", listOf())
         )
 
         binding.maineventsRecyclerView.adapter = MyRecyclerViewAdapter(dataList)

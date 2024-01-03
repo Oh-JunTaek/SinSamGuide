@@ -18,6 +18,7 @@ class MyRecyclerViewAdapter(private val dataList: List<ContentsData>) : Recycler
                     // 새로운 액티비티를 시작하고, 아이템 데이터를 인텐트에 담아 전달합니다.
                     val intent = Intent(binding.root.context, DetailActivity::class.java).apply {
                         putExtra("item", item)
+                        putIntegerArrayListExtra("imageList", ArrayList(item.imageResIdList))
                     }
                     binding.root.context.startActivity(intent)
                 }
