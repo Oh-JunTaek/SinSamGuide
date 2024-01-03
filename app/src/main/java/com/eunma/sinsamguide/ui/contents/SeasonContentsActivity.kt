@@ -14,6 +14,7 @@ class SeasonContentsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySeasonContentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setTitle("시즌 컨텐츠")
 
         val gridLayoutManager = GridLayoutManager(this, 2)
         binding.seasonRecyclerView.layoutManager = gridLayoutManager

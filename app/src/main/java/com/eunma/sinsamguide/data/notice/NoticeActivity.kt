@@ -21,6 +21,7 @@ class NoticeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNoticeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setTitle("공지사항")
         binding.noticeRecyclerView.addItemDecoration(VerticalSpaceItemDecoration(30))
         loadNoticesFromFirestore()
 

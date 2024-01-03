@@ -19,6 +19,7 @@ class EncyclopediaMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEncyclopediaMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setTitle("도감")
 
         // 샘플 데이터 생성
         val items = List(100) { EncyclopediaItem("Item #$it", "This is content #$it") }

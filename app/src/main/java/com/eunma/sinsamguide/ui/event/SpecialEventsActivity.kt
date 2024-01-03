@@ -16,6 +16,7 @@ class SpecialEventsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySpecialEventsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setTitle("특별 이벤트")
 
         val gridLayoutManager = GridLayoutManager(this, 2)
         binding.specialeventsRecyclerView.layoutManager = gridLayoutManager

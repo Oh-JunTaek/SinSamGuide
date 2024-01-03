@@ -16,6 +16,7 @@ class MainEventsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainEventsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setTitle("메인 이벤트")
 
         val gridLayoutManager = GridLayoutManager(this, 2)
         binding.maineventsRecyclerView.layoutManager = gridLayoutManager

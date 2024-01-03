@@ -16,6 +16,7 @@ class CashEventsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCashEventsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setTitle("소비 이벤트")
 
         val gridLayoutManager = GridLayoutManager(this, 2)
         binding.casheventsRecyclerView.layoutManager = gridLayoutManager

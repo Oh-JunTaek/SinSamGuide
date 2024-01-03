@@ -13,6 +13,7 @@ class NewContentsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNewContentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setTitle("신규 컨텐츠")
 
         val gridLayoutManager = GridLayoutManager(this, 2)
         binding.newRecyclerView.layoutManager = gridLayoutManager
