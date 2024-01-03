@@ -19,6 +19,11 @@ import com.eunma.sinsamguide.databinding.FragmentHomeBinding
 import com.eunma.sinsamguide.ui.contents.MainContentsActivity
 import com.eunma.sinsamguide.ui.contents.NewContentsActivity
 import com.eunma.sinsamguide.ui.contents.SeasonContentsActivity
+import com.eunma.sinsamguide.ui.encyclopedia.EncyclopediaMainActivity
+import com.eunma.sinsamguide.ui.event.CashEventsActivity
+import com.eunma.sinsamguide.ui.event.MainEventsActivity
+import com.eunma.sinsamguide.ui.event.SeasonEventsActivity
+import com.eunma.sinsamguide.ui.event.SpecialEventsActivity
 
 class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
@@ -52,7 +57,11 @@ class HomeFragment : Fragment() {
 
         val pictorialButton = binding.btnPictorialBook
         pictorialButton.setOnClickListener {
-            Toast.makeText(context, "미구현입니다.", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, EncyclopediaMainActivity::class.java)
+            // 필요하다면, 여기에 인텐트에 추가적인 데이터를 넣을 수 있습니다.
+            // 예: intent.putExtra("title", "제목")
+            //     intent.putExtra("content", "내용")
+            startActivity(intent)
         }
 
         val freeboardButton = binding.btnFreeBoad
@@ -135,16 +144,20 @@ class HomeFragment : Fragment() {
         val buttonSpecial: Button = dialogBinding.btnSpecialEvent
         val buttonSpend : Button = dialogBinding.btnSpendEvent
         buttonMain.setOnClickListener {
-            // 메인 버튼 클릭시 할 일
+            val intent = Intent(requireContext(), MainEventsActivity::class.java)
+            startActivity(intent)
         }
         buttonSeason.setOnClickListener {
-            // 시즌 버튼 클릭시 할 일
+            val intent = Intent(requireContext(), SeasonEventsActivity::class.java)
+            startActivity(intent)
         }
         buttonSpecial.setOnClickListener {
-            // 특별 버튼 클릭시 할 일
+            val intent = Intent(requireContext(), SpecialEventsActivity::class.java)
+            startActivity(intent)
         }
         buttonSpend.setOnClickListener {
-
+            val intent = Intent(requireContext(), CashEventsActivity::class.java)
+            startActivity(intent)
         }
 
         builder.setView(dialogBinding.root)
