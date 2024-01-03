@@ -3,36 +3,46 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/textViewEventDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_event_description" />
+        android:text="@string/button_event_description"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/btnMainEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메인 이벤트" />
+        android:text="메인 이벤트"
+        android:backgroundTint="#8BC34A"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/btnSeasonEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="시즌 이벤트" />
+        android:text="시즌 이벤트"
+        android:backgroundTint="#8BC34A"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/btnSpecialEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="특별 이벤트" />
+        android:text="특별 이벤트"
+        android:backgroundTint="#8BC34A"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/btnSpendEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="소비 이벤트" />
+        android:text="소비 이벤트"
+        android:backgroundTint="#8BC34A"
+        android:padding="8dp" />
 
 </LinearLayout>

@@ -3,31 +3,38 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/textViewContentsDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_contents_description" />
+        android:text="@string/button_contents_description"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/btnMainContents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메인 컨텐츠" />
+        android:text="메인 컨텐츠"
+        android:backgroundTint="#8BC34A"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/btnSeasonContents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="시즌 컨텐츠" />
+        android:text="시즌 컨텐츠"
+        android:backgroundTint="#8BC34A"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/btnNewContents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="신규 컨텐츠" />
-
+        android:text="신규 컨텐츠"
+        android:backgroundTint="#8BC34A"
+        android:padding="8dp" />
 
 </LinearLayout>
