@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.eunma.sinsamguide.R
 import com.eunma.sinsamguide.databinding.ActivitySpecialEventsBinding
 import com.eunma.sinsamguide.ui.contents.ContentsData
+import com.eunma.sinsamguide.ui.contents.ContentsViewPagerImages
 import com.eunma.sinsamguide.ui.contents.GridSpacingItemDecoration
 import com.eunma.sinsamguide.ui.contents.MyRecyclerViewAdapter
 
@@ -23,9 +24,21 @@ class SpecialEventsActivity : AppCompatActivity() {
         binding.specialeventsRecyclerView.addItemDecoration(GridSpacingItemDecoration(2, 16))
 
         val dataList: List<ContentsData> = listOf(
-            ContentsData(R.drawable.baekma, "카페 이벤트","", listOf()),
-            ContentsData(R.drawable.red_cliffs, "적벽 대전","", listOf()),
-            ContentsData(R.drawable.hanjung, "한중 전쟁","", listOf())
+            ContentsData(R.drawable.baekma, "카페 이벤트",
+                getString(R.string.detail_baekma),
+                ContentsViewPagerImages.values().filter { it.name.startsWith("BAEKMA") }
+                    .map { it.imageResId }
+            ),
+            ContentsData(R.drawable.red_cliffs, "적벽 대전",
+                getString(R.string.detail_baekma),
+                ContentsViewPagerImages.values().filter { it.name.startsWith("BAEKMA") }
+                    .map { it.imageResId }
+            ),
+            ContentsData(R.drawable.hanjung, "한중 전쟁",
+                getString(R.string.detail_baekma),
+                ContentsViewPagerImages.values().filter { it.name.startsWith("BAEKMA") }
+                    .map { it.imageResId }
+            ),
         )
 
         binding.specialeventsRecyclerView.adapter = MyRecyclerViewAdapter(dataList)
