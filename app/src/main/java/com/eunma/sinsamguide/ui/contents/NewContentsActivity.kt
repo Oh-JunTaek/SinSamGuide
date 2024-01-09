@@ -20,8 +20,16 @@ class NewContentsActivity : AppCompatActivity() {
         binding.newRecyclerView.addItemDecoration(GridSpacingItemDecoration(2, 16))
 
         val dataList: List<ContentsData> = listOf(
-            ContentsData(R.drawable.mewu, "묘우 탈보",getString(R.string.detail_mewu), listOf()),
-            ContentsData(R.drawable.ujaek, "유적 정봉",getString(R.string.detail_ujaek), listOf())
+            ContentsData(R.drawable.mewu, "묘우 탈보",
+                    getString(R.string.detail_mewu),
+            ContentsViewPagerImages.values().filter { it.name.startsWith("MEWU") }
+                .map { it.imageResId }
+        ),
+            ContentsData(R.drawable.ujaek, "유적 정봉",
+                getString(R.string.detail_ujaek),
+                ContentsViewPagerImages.values().filter { it.name.startsWith("UJAEK") }
+                    .map { it.imageResId }
+            ),
 
         )
 

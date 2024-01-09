@@ -29,21 +29,21 @@ class MainContentsActivity : AppCompatActivity() {
             ),
             ContentsData(R.drawable.namman,
                 "남만 침입",
-                getString(R.string.detail_anmoon),
-                ContentsViewPagerImages.values().filter { it.name.startsWith("ANMOON") }
+                getString(R.string.detail_namman),
+                ContentsViewPagerImages.values().filter { it.name.startsWith("NAMMAN") }
                     .map { it.imageResId }
             ),
             ContentsData(R.drawable.janngan,
                 "장안 쟁탈전",
-                getString(R.string.detail_anmoon),
-                ContentsViewPagerImages.values().filter { it.name.startsWith("ANMOON") }
+                getString(R.string.detail_jangan),
+                ContentsViewPagerImages.values().filter { it.name.startsWith("JANGAN") }
                     .map { it.imageResId }
             ),
 
             ContentsData(R.drawable.gundan,
                 "군단 전투",
-                getString(R.string.detail_anmoon),
-                ContentsViewPagerImages.values().filter { it.name.startsWith("ANMOON") }
+                getString(R.string.detail_gundan),
+                ContentsViewPagerImages.values().filter { it.name.startsWith("GUNDAN") }
                     .map { it.imageResId }
             ),
         )
